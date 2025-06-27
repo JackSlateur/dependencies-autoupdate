@@ -2,7 +2,7 @@
 
 # fail as soon as any command errors
 set -e
-set +x
+set -x
 
 token=$1
 update_command=$2
