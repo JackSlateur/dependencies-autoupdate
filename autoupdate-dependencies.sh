@@ -4,12 +4,12 @@
 set -e
 set -x
 
-token=$1
-update_command=$2
-pr_branch=$3
-update_path=$4
-on_changes_command=$5
-commit_message=$6
+token="$1"
+update_command="$2"
+pr_branch="$3"
+update_path="$4"
+on_changes_command="$5"
+commit_message="$6"
 repo=$GITHUB_REPOSITORY #owner and repository: ie: user/repo
 username=$GITHUB_ACTOR
 
