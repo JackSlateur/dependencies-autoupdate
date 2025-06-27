@@ -8,6 +8,7 @@ update_command=$2
 pr_branch=$3
 update_path=$4
 on_changes_command=$5
+commit_message=$6
 repo=$GITHUB_REPOSITORY #owner and repository: ie: user/repo
 username=$GITHUB_ACTOR
 
@@ -27,6 +28,11 @@ fi
 if [ -z "$pr_branch" ]; then
     echo "pr-branch not set, falling back to `main`"
     pr_branch="main"
+fi
+
+if [ -z "$commit_message" ]; then
+    echo "commit-message not set, using default"
+    commit_message="Auto-updated dependencies"
 fi
 
 # remove optional params markers
@@ -88,7 +94,7 @@ then
     git add -A
 
     # commit the changes to updated files
-    git commit -a -m "Auto-updated dependencies" --signoff
+    git commit -a -m "$commit_message" --signoff
     
     # push the changes
     git push authenticated -f
