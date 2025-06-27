@@ -26,16 +26,6 @@ if [ -z "$update_command" ]; then
     exit 1
 fi
 
-if [ -z "$pr_branch" ]; then
-    echo "pr-branch not set, falling back to `main`"
-    pr_branch="main"
-fi
-
-if [ -z "$commit_message" ]; then
-    echo "commit-message not set, using default"
-    commit_message="Auto-updated dependencies"
-fi
-
 # remove optional params markers
 update_path_value=${update_path%?}
 if [ -n "$update_path_value" ]; then

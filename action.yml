@@ -13,6 +13,7 @@ inputs:
   pr-branch:
     description: PR branch against which the PR should be created, defaults to main
     required: false
+    default: "main"
   update-path:
     description: Path to directory to run the update-command. If not provided defaults to root
     required: false
@@ -22,6 +23,7 @@ inputs:
   commit-message:
     description: Message used for the commit, defaults to "Auto-updated dependencies"
     required: false
+    default: "Auto-updated dependencies"
 runs:
   using: 'composite'
   steps:
