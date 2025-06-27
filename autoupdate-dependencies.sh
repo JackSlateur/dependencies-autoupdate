@@ -71,9 +71,11 @@ fi
 echo "Running update command $update_command"
 eval $update_command
 
+set +e
 git diff --exit-code >/dev/null 2>&1
 if [ $? = 1 ]
 then
+    set -e
     echo "Updates detected"
 
     # configure git authorship
