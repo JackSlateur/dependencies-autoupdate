@@ -9,7 +9,7 @@ pr_branch=$3
 update_path=$4
 on_changes_command=$5
 repo=$GITHUB_REPOSITORY #owner and repository: ie: user/repo
-username=$GITHUB_ACTOR
+username="dependencies-autoupdate"
 
 branch_name="automated-dependencies-update"
 email="noreply@github.com"
