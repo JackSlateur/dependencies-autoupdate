@@ -59,8 +59,7 @@ fi
 echo "Running update command $update_command"
 eval $update_command
 
-git diff --exit-code >/dev/null 2>&1
-if [ $? = 1 ]
+if ! git diff --exit-code >/dev/null 2>&1
 then
     echo "Updates detected"
 
